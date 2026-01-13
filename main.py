@@ -7,6 +7,10 @@ import httpx
 import sqlite3
 import joblib
 import pandas as pd
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # DB Setup
@@ -33,7 +37,7 @@ app.mount("/static/vendor", StaticFiles(directory="static/vendor"), name="vendor
 
 templates = Jinja2Templates(directory="templates")
 
-TMDB_API_KEY = "your key here"
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
 
 @app.get("/", response_class=HTMLResponse)
