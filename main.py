@@ -33,7 +33,7 @@ app.mount("/static/vendor", StaticFiles(directory="static/vendor"), name="vendor
 
 templates = Jinja2Templates(directory="templates")
 
-TMDB_API_KEY = "yourkeyhere"
+TMDB_API_KEY = "fb3436256d5649aa79a20ffd7c12a2b9"
 
 
 @app.get("/", response_class=HTMLResponse)
